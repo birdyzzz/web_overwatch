@@ -26,7 +26,7 @@ body {
 #right {
     width: 40%;
     float: right;
-    margin-right: -100px;
+    margin-right: -110px;
 }
 
 .layui-input {
@@ -34,7 +34,8 @@ body {
     background-color: rgba(255, 255, 255, .1)!important;
 }
 
-#submit {
+#submit,
+#submit_reg {
     background-color: rgb(215, 31, 7);
 }
 
