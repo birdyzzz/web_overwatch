@@ -20,7 +20,6 @@ function getUSerInfo() {
             Authorization: localStorage.getItem('token') || ''
         },
         success: function(res) {
-            console.log(res);
             renderAvatar(res.data)
         }
     })
@@ -28,7 +27,18 @@ function getUSerInfo() {
 
 function renderAvatar(user) {
     var name = user.nickname || user.username;
-    $('#welcome').html('早上好!&nbsp;&nbsp;' + name);
+    var nowHour = new Date();
+    var h = nowHour.getHours();
+    console.log(h);
+    var str = "";
+    if (h < 12) {
+        str = '上午好!'
+    } else if (h < 18) {
+        str = '下午好!'
+    } else {
+        str = '晚上好!'
+    }
+    $('#welcome').html(str + '&nbsp;&nbsp;' + name);
     if (user.user_pic !== null) {
         $('.layui-nav-img').attr('src', user.user_pic).show()
         $('.text_avatar').hide()
