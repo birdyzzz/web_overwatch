@@ -1,6 +1,7 @@
 $(function() {
     $.ajaxPrefilter(function(option) {
-        option.url = 'http://api-breakingnews-web.itheima.net' + option.url
+        // option.url = 'http://api-breakingnews-web.itheima.net' + option.url
+        option.url = 'http://127.0.0.1:3007' + option.url
         if (option.url.indexOf('/my/') !== -1) {
             option.headers = {
                 Authorization: localStorage.getItem('token') || ''
